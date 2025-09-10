@@ -72,10 +72,10 @@ body {
     text-align: center;
     margin-bottom: 30px;
     padding: 20px;
-    background: linear-gradient(135deg, #00d4aa, #00b894);
+    background: linear-gradient(135deg, #40196D, #2d1250);
     color: white;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 212, 170, 0.3);
+    box-shadow: 0 4px 20px rgba(64, 25, 109, 0.3);
 }
 
 .demo-header h1 {
@@ -123,14 +123,37 @@ body {
 
 .form-group input:focus {
     outline: none;
-    border-color: #00d4aa;
-    box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+    border-color: #40196D;
+    box-shadow: 0 0 0 3px rgba(64, 25, 109, 0.1);
+    transform: translateY(-1px);
+}
+
+.form-group select {
+    width: 100%;
+    padding: 16px;
+    border: 1.5px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: #fff;
+    color: #2d3436;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #40196D;
+    box-shadow: 0 0 0 3px rgba(64, 25, 109, 0.1);
     transform: translateY(-1px);
 }
 
 .submit-btn {
     width: 100%;
-    background: linear-gradient(135deg, #00d4aa, #00b894);
+    background: linear-gradient(135deg, #40196D, #2d1250);
     color: white;
     border: none;
     padding: 18px;
@@ -140,12 +163,12 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
-    box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+    box-shadow: 0 4px 15px rgba(64, 25, 109, 0.3);
 }
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 212, 170, 0.4);
+    box-shadow: 0 6px 20px rgba(64, 25, 109, 0.4);
 }
 
 .submit-btn:active {
@@ -175,7 +198,7 @@ body {
 }
 
 .done-text {
-    color: #00d4aa;
+    color: #40196D;
     font-weight: 600;
     font-size: 17px;
 }
@@ -199,7 +222,7 @@ body {
 }
 
 .check-circle svg {
-    filter: drop-shadow(0 4px 12px rgba(0, 212, 170, 0.3));
+    filter: drop-shadow(0 4px 12px rgba(64, 25, 109, 0.3));
 }
 
 .success-title {
@@ -228,7 +251,7 @@ body {
     line-height: 1.5;
     margin-bottom: 40px;
     padding: 0 30px;
-    color: #00d4aa;
+    color: #40196D;
     font-weight: 500;
 }
 
@@ -252,14 +275,14 @@ body {
 }
 
 .action-item:hover {
-    background: rgba(0, 212, 170, 0.08);
+    background: rgba(64, 25, 109, 0.08);
     transform: translateY(-2px);
 }
 
 .action-icon {
     width: 52px;
     height: 52px;
-    background: rgba(0, 212, 170, 0.12);
+    background: rgba(64, 25, 109, 0.12);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -269,7 +292,7 @@ body {
 }
 
 .action-item:hover .action-icon {
-    background: rgba(0, 212, 170, 0.2);
+    background: rgba(64, 25, 109, 0.2);
     transform: scale(1.05);
 }
 
@@ -338,7 +361,7 @@ body {
 }
 
 .bonus-btn {
-    background: #00d4aa;
+    background: #40196D;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -347,13 +370,13 @@ body {
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 212, 170, 0.3);
+    box-shadow: 0 2px 8px rgba(64, 25, 109, 0.3);
 }
 
 .bonus-btn:hover {
-    background: #00b894;
+    background: #2d1250;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 212, 170, 0.4);
+    box-shadow: 0 4px 12px rgba(64, 25, 109, 0.4);
 }
 
 /* Loan Banner */
@@ -453,8 +476,8 @@ body {
 }
 
 .back-btn:hover {
-    background: rgba(0, 212, 170, 0.1);
-    color: #00d4aa;
+    background: rgba(64, 25, 109, 0.1);
+    color: #40196D;
 }
 
 .details-header h1 {
@@ -466,7 +489,14 @@ body {
 .profile-icon {
     width: 24px;
     height: 24px;
-    color: #00d4aa;
+    color: #40196D;
+}
+
+.bank-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    object-fit: contain;
 }
 
 .bank-icon {
@@ -500,8 +530,8 @@ body {
 }
 
 .status-success {
-    color: #00d4aa;
-    background: rgba(0, 212, 170, 0.1);
+    color: #40196D;
+    background: rgba(64, 25, 109, 0.1);
     display: inline-block;
     padding: 6px 16px;
     border-radius: 20px;
@@ -526,7 +556,7 @@ body {
     left: 60px;
     right: 60px;
     height: 2px;
-    background: #00d4aa;
+    background: #40196D;
     z-index: 1;
 }
 
@@ -543,7 +573,7 @@ body {
 .step-icon {
     width: 24px;
     height: 24px;
-    background: #00d4aa;
+    background: #40196D;
     border: 3px solid #ffffff;
     border-radius: 50%;
     display: flex;
@@ -553,7 +583,7 @@ body {
     font-weight: bold;
     color: white;
     margin-bottom: 8px;
-    box-shadow: 0 2px 8px rgba(0, 212, 170, 0.3);
+    box-shadow: 0 2px 8px rgba(64, 25, 109, 0.3);
 }
 
 .step-text {
@@ -576,7 +606,7 @@ body {
 
 /* Disclaimer */
 .disclaimer {
-    background: rgba(0, 212, 170, 0.08);
+    background: rgba(64, 25, 109, 0.08);
     padding: 18px 20px;
     margin: 0 20px 25px;
     border-radius: 12px;
@@ -587,7 +617,7 @@ body {
 }
 
 .contact-link {
-    color: #00d4aa;
+    color: #40196D;
     font-weight: 600;
     text-decoration: none;
 }
@@ -679,7 +709,7 @@ body {
 }
 
 .action-row .value {
-    color: #00d4aa;
+    color: #40196D;
     font-weight: 600;
 }
 
@@ -693,9 +723,9 @@ body {
 
 .report-btn {
     flex: 1;
-    background: rgba(0, 212, 170, 0.1);
-    color: #00d4aa;
-    border: 1px solid rgba(0, 212, 170, 0.2);
+    background: rgba(64, 25, 109, 0.1);
+    color: #40196D;
+    border: 1px solid rgba(64, 25, 109, 0.2);
     padding: 16px;
     border-radius: 25px;
     font-size: 15px;
@@ -705,13 +735,13 @@ body {
 }
 
 .report-btn:hover {
-    background: rgba(0, 212, 170, 0.15);
+    background: rgba(64, 25, 109, 0.15);
     transform: translateY(-1px);
 }
 
 .share-btn {
     flex: 2;
-    background: #00d4aa;
+    background: #40196D;
     color: white;
     border: none;
     padding: 16px;
@@ -720,13 +750,13 @@ body {
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 212, 170, 0.3);
+    box-shadow: 0 4px 15px rgba(64, 25, 109, 0.3);
 }
 
 .share-btn:hover {
-    background: #00b894;
+    background: #2d1250;
     transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(0, 212, 170, 0.4);
+    box-shadow: 0 6px 20px rgba(64, 25, 109, 0.4);
 }
 
 /* Responsive Design */

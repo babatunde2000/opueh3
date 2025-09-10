@@ -2,6 +2,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('transactionForm');
     
+    // Load Nigerian banks
+    loadNigerianBanks();
+    
     // Set default transaction date to current date/time
     const now = new Date();
     const isoString = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
@@ -48,6 +51,54 @@ document.addEventListener('DOMContentLoaded', function() {
             this.parentNode.style.transform = 'translateY(0)';
         });
     });
+    
+    // Load Nigerian banks function
+    async function loadNigerianBanks() {
+        const bankSelect = document.getElementById('bankName');
+        
+        try {
+            const response = await fetch('/api/banks');
+            const banks = await response.json();
+            
+            // Clear existing options except the first one
+            bankSelect.innerHTML = '<option value="">Select a bank</option>';
+            
+            // Add bank options
+            banks.forEach(bank => {
+                const option = document.createElement('option');
+                option.value = bank.name;
+                option.textContent = bank.name;
+                option.dataset.code = bank.code;
+                option.dataset.logo = bank.logo;
+                bankSelect.appendChild(option);
+            });
+        } catch (error) {
+            console.error('Error loading banks:', error);
+            // Fallback to manual list if API fails
+            loadFallbackBanks();
+        }
+    }
+    
+    function loadFallbackBanks() {
+        const bankSelect = document.getElementById('bankName');
+        const fallbackBanks = [
+            'Access Bank', 'Citibank', 'Diamond Bank', 'Ecobank Nigeria', 'Fidelity Bank Nigeria',
+            'First Bank of Nigeria', 'First City Monument Bank', 'Guaranty Trust Bank',
+            'Heritage Bank Plc', 'Keystone Bank Limited', 'Polaris Bank', 'Providus Bank Plc',
+            'Stanbic IBTC Bank Nigeria Limited', 'Standard Chartered Bank', 'Sterling Bank Plc',
+            'Union Bank of Nigeria', 'United Bank for Africa', 'Unity Bank Plc', 'Wema Bank Plc',
+            'Zenith Bank Plc', 'Jaiz Bank', 'SunTrust Bank Nigeria Limited', 'Kuda Microfinance Bank',
+            'Opay', 'PalmPay', 'Moniepoint', 'Carbon', 'Rubies Bank', 'Sparkle Microfinance Bank'
+        ];
+        
+        bankSelect.innerHTML = '<option value="">Select a bank</option>';
+        fallbackBanks.forEach(bankName => {
+            const option = document.createElement('option');
+            option.value = bankName;
+            option.textContent = bankName;
+            bankSelect.appendChild(option);
+        });
+    }
     
     function validateForm() {
         let isValid = true;

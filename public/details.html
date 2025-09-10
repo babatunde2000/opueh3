@@ -196,6 +196,30 @@
             document.getElementById('receivedTime').textContent = formatTimestamp(new Date(baseTime.getTime() + 28000));
         }
 
+        async function loadBankLogo(bankName) {
+            try {
+                const response = await fetch('/api/banks');
+                const banks = await response.json();
+                const bank = banks.find(b => b.name === bankName);
+                
+                if (bank && bank.logo) {
+                    const bankLogo = document.getElementById('bankLogo');
+                    const defaultIcon = document.getElementById('defaultIcon');
+                    
+                    bankLogo.src = bank.logo;
+                    bankLogo.style.display = 'block';
+                    defaultIcon.style.display = 'none';
+                    
+                    // Handle image load error
+                    bankLogo.onerror = function() {
+                        this.style.display = 'none';
+                        defaultIcon.style.display = 'block';
+                    };
+                }
+            } catch (error) {
+                console.error('Error loading bank logo:', error);
+            }
+        }
         function formatTimestamp(date) {
             const month = (date.getMonth() + 1).toString().padStart(2, '0');
             const day = date.getDate().toString().padStart(2, '0');
